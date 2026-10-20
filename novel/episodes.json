@@ -5,5 +5,12 @@
     "label": "プロローグ",
     "subtitle": "死者からの荷物",
     "act": "act1"
+  },
+  {
+    "ep": 1,
+    "id": "ep01",
+    "label": "第1話",
+    "subtitle": "深度0m",
+    "act": "act1"
   }
 ]
