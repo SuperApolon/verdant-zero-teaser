@@ -61,5 +61,12 @@
     "label": "第8話",
     "subtitle": "灯会",
     "act": "act1"
+  },
+  {
+    "ep": 9,
+    "id": "ep09",
+    "label": "第9話",
+    "subtitle": "灯りを取り返す",
+    "act": "act1"
   }
 ]
