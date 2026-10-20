@@ -12,5 +12,12 @@
     "label": "第1話",
     "subtitle": "深度0m",
     "act": "act1"
+  },
+  {
+    "ep": 2,
+    "id": "ep02",
+    "label": "第2話",
+    "subtitle": "泡の数を数える",
+    "act": "act1"
   }
 ]
