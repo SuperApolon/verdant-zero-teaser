@@ -26,5 +26,12 @@
     "label": "第3話",
     "subtitle": "ようこそ、＿＿＿へ！",
     "act": "act1"
+  },
+  {
+    "ep": 4,
+    "id": "ep04",
+    "label": "第4話",
+    "subtitle": "銛と、弾ける数字",
+    "act": "act1"
   }
 ]
