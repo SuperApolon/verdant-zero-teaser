@@ -40,5 +40,12 @@
     "label": "第5話",
     "subtitle": "薄明層の商人",
     "act": "act1"
+  },
+  {
+    "ep": 6,
+    "id": "ep06",
+    "label": "第6話",
+    "subtitle": "灯喰い",
+    "act": "act1"
   }
 ]
