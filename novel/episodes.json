@@ -75,5 +75,12 @@
     "label": "第10話",
     "subtitle": "三人で一人",
     "act": "act1"
+  },
+  {
+    "ep": 11,
+    "id": "ep11",
+    "label": "第11話",
+    "subtitle": "海女の深さ",
+    "act": "act1"
   }
 ]
