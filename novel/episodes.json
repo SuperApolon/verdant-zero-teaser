@@ -68,5 +68,12 @@
     "label": "第9話",
     "subtitle": "灯りを取り返す",
     "act": "act1"
+  },
+  {
+    "ep": 10,
+    "id": "ep10",
+    "label": "第10話",
+    "subtitle": "三人で一人",
+    "act": "act1"
   }
 ]
