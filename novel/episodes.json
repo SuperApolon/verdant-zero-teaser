@@ -54,5 +54,12 @@
     "label": "第7話",
     "subtitle": "破泡",
     "act": "act1"
+  },
+  {
+    "ep": 8,
+    "id": "ep08",
+    "label": "第8話",
+    "subtitle": "灯会",
+    "act": "act1"
   }
 ]
