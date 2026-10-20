@@ -19,5 +19,12 @@
     "label": "第2話",
     "subtitle": "泡の数を数える",
     "act": "act1"
+  },
+  {
+    "ep": 3,
+    "id": "ep03",
+    "label": "第3話",
+    "subtitle": "ようこそ、＿＿＿へ！",
+    "act": "act1"
   }
 ]
