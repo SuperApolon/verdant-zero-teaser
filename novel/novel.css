@@ -1,0 +1,38 @@
+:root{--ultra:#2A3C9E;--amber:#D6A548;--pearl:#F4F1EA;--navy:#0E1430;--mincho:"Shippori Mincho","Noto Serif JP","Hiragino Mincho ProN","Yu Mincho",serif}
+*{box-sizing:border-box}html{background:var(--navy);color:var(--pearl)}
+body{margin:0;font-family:var(--mincho);line-height:1.9;-webkit-text-size-adjust:100%}
+a{color:var(--amber)}a:focus-visible{outline:2px solid var(--amber);outline-offset:3px}
+.bar{display:flex;justify-content:space-between;gap:1rem;padding:.8rem 1.2rem;font:500 .85rem/1.4 "Space Grotesk",system-ui,sans-serif;letter-spacing:.08em;border-bottom:1px solid #2A3C9E88}
+.bar a{text-decoration:none}
+.hero{margin:0;background:#000}.hero img{display:block;width:100%;height:auto;max-height:56vh;object-fit:cover}
+.head{max-width:44rem;margin:2rem auto 1rem;padding:0 1.25rem}
+.act{color:var(--amber);font-size:.9rem;letter-spacing:.3em;margin:0}
+h1{font-weight:600;font-size:clamp(1.4rem,4vw,2rem);margin:.3rem 0 0;line-height:1.5}
+.date{font:400 .8rem "Space Grotesk",system-ui,sans-serif;opacity:.7}
+/* reading area: vertical-rl on wide screens, horizontal fallback on narrow */
+.text{margin:0 auto;padding:1.5rem 1.25rem 3rem;max-width:44rem;font-size:1.05rem}
+.text p{margin:0;text-indent:0}.text .gap{height:1.9em}.text .sep{text-align:center;color:var(--amber);margin:1em 0}
+ruby rt{font-size:.5em;color:#F4F1EAcc}
+@media (min-width:900px) and (min-height:600px){
+ .text{writing-mode:vertical-rl;-webkit-writing-mode:vertical-rl;text-orientation:mixed;max-width:none;height:min(78vh,44em);
+  overflow-x:auto;overflow-y:hidden;padding:2rem 3rem;font-size:1.12rem;line-height:2;margin:0 2rem;scrollbar-color:var(--ultra) transparent}
+ .text .gap{height:auto;width:2em}.text .sep{margin:0 1em}
+ .text .tcy{text-combine-upright:all;-webkit-text-combine:horizontal}
+}
+.pager{display:flex;justify-content:space-between;max-width:44rem;margin:0 auto 3rem;padding:0 1.25rem;gap:1rem}
+.pager a{border:1px solid var(--ultra);padding:.6rem 1rem;border-radius:2rem;text-decoration:none;background:#2A3C9E33}
+.toc{max-width:40rem;margin:2rem auto 4rem;padding:0 1.25rem}.toc h2{color:var(--amber);font-weight:500;letter-spacing:.3em;font-size:1rem;border-bottom:1px solid #D6A54866;padding-bottom:.4rem}
+.toc ol{list-style:none;padding:0;margin:0 0 2rem}.toc li a{display:flex;gap:1rem;padding:.75rem .25rem;text-decoration:none;color:var(--pearl);border-bottom:1px solid #2A3C9E66}
+.toc li a:hover{background:#2A3C9E44}.toc .n{color:var(--amber);min-width:6em}.toc time{margin-left:auto;font:.75rem "Space Grotesk",sans-serif;opacity:.6;white-space:nowrap}
+footer{text-align:center;padding:2rem;font:.75rem "Space Grotesk",sans-serif;opacity:.6}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+.intro{font-size:.9rem;color:#F4F1EAcc;border:1px solid #2A3C9E;padding:.8em 1em;margin:0 0 1.5em}
+@media (min-width:900px) and (min-height:600px){.intro{margin:0 0 0 1.5em}}
+.outro{max-width:44rem;margin:0 auto 3rem;padding:1.5rem 1.25rem 0;border-top:1px solid #D6A54866;font-size:.95rem}
+.outro .next{color:var(--amber)}.outro .next a{font-size:1.05rem}
+.outro .pager{padding:0;margin:1.2rem 0 0}
+footer p{margin:.2rem 0}.toc .ai{font-size:.85rem;opacity:.8;border-top:1px solid #2A3C9E66;padding-top:1rem}
+.toc .notice{font-size:.85rem;opacity:.85;margin:0 0 .4rem}
+/* inline illustration (at the episode's 【挿絵】 marker) */
+.illust{margin:1.6em 0;padding:0}.illust img{display:block;width:100%;height:auto;border-radius:4px}
+@media (min-width:900px) and (min-height:600px){.illust{margin:0 1.6em;height:100%;display:flex;align-items:center}.illust img{width:auto;height:auto;max-height:100%;max-width:min(80vw,1280px)}}
