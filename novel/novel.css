@@ -79,8 +79,17 @@ footer{text-align:center;padding:2rem 1rem calc(2rem + var(--sb));font-size:.75r
 .toc .badge.new{background:var(--amber);border-color:var(--amber);color:#fff;font-weight:600;letter-spacing:.05em}
 .toc li a .badges{display:inline-flex;gap:.3rem;margin-left:auto}
 .toc li a:has(.badges)::after{margin-left:.4rem}
+:root[data-wm=v] .reading>.pager:first-of-type{display:none}
+:root[data-wm=v] .reading .head{margin:.6em 0 .5em}:root[data-wm=v] .reading .head h1{font-size:1.15em}
+:root[data-wm=v] .reading .resume.on{margin:.4em 0}
+:root[data-wm=v] .text{height:clamp(14em,calc(100svh - 10.5rem),40em);height:clamp(12em,var(--vz-vh,calc(100svh - 10.5rem)),40em)}
+:root[data-wm=v] .text>.hero{margin:0 0 0 1.4em;height:100%;display:flex;align-items:center}:root[data-wm=v] .text>.hero img{width:auto;max-height:100%;max-width:min(80vw,40em)}
 .panel{max-height:calc(100svh - 4rem - var(--st) - 5.5rem);overflow:auto}
 body.panel-open .resume.on{position:fixed;z-index:45;left:calc(.5rem + var(--sl));right:calc(.5rem + var(--sr));bottom:calc(.75rem + var(--sb));margin:0;background:var(--bg);box-shadow:0 6px 24px #0003;font-size:.9rem}
 
 /* tap targets ≥44×44 at all widths (テトラ) */
 .bar .brand,.bar a.tocl{min-width:44px;min-height:44px}
+/* latest episode: plain non-button label instead of a dead 「次の話 →」 (マウス再確認) */
+.pager span.soon{border:0;background:none;box-shadow:none;color:var(--sub);cursor:default;font-size:.85rem}
+/* narrow vertical: keep the start of the text on screen next to the opening illustration */
+@media (max-width:600px){:root[data-wm=v] .text>.hero img{max-width:min(48vw,40em)}}

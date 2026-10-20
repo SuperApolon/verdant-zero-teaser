@@ -11,7 +11,7 @@
   const DEF = { theme: 'auto', size: '1', font: 'mincho', wm: 'h' };
   const OK = { theme: ['auto', 'white', 'kinari', 'dark'], size: ['0', '1', '2', '3'], font: ['mincho', 'gothic'], wm: ['h', 'v'] };
   for (const k in st.s) if (!OK[k] || !OK[k].includes(st.s[k])) delete st.s[k];
-  const apply = () => { for (const k in DEF) d.dataset[k] = st.s[k] || DEF[k]; const q = $('#vz-wm'); if (q) { const v = d.dataset.wm === 'v'; q.textContent = v ? '横' : '縦'; q.setAttribute('aria-label', v ? '横書きにする' : '縦書きにする'); } $$('[data-set]').forEach(b => b.setAttribute('aria-pressed', String((st.s[b.dataset.set] || DEF[b.dataset.set]) === b.dataset.val))); };
+  let apply = () => { for (const k in DEF) d.dataset[k] = st.s[k] || DEF[k]; const q = $('#vz-wm'); if (q) { const v = d.dataset.wm === 'v'; q.textContent = v ? '横' : '縦'; q.setAttribute('aria-label', v ? '横書きにする' : '縦書きにする'); } $$('[data-set]').forEach(b => b.setAttribute('aria-pressed', String((st.s[b.dataset.set] || DEF[b.dataset.set]) === b.dataset.val))); };
   apply();
   // quick vertical/horizontal toggle (D64: default horizontal)
   const barEl = $('.bar'), setEl = $('#vz-settings');
@@ -41,12 +41,21 @@
   }
   // vertical-rl start = right edge. Spec: scrollLeft 0 (range -max..0); legacy WebKit: max (range 0..max). Clamp handles both.
   function toStart() { if (!text) return; text.scrollLeft = text.scrollWidth; if (text.scrollLeft !== 0 && text.scrollLeft < text.scrollWidth - text.clientWidth - 1) text.scrollLeft = 0; }
-  if (vert()) { toStart(); addEventListener('load', () => { if (vert() && Math.abs(text.scrollLeft) < 2) toStart(); }, { once: true }); }
+  fit(); if (vert()) { toStart(); addEventListener('load', () => { if (vert() && Math.abs(text.scrollLeft) < 2) toStart(); }, { once: true }); }
   // keep the page itself from scrolling sideways; wheel (vertical) moves text horizontally in vertical mode
   if (text) text.addEventListener('wheel', e => { if (!vert() || e.ctrlKey || Math.abs(e.deltaX) > Math.abs(e.deltaY)) return;
     const m = text.scrollWidth - text.clientWidth, a = Math.abs(text.scrollLeft); if (m <= 0) return;
     if ((e.deltaY > 0 && a >= m - 1) || (e.deltaY < 0 && a <= 1)) return; e.preventDefault(); text.scrollLeft -= e.deltaY * (e.deltaMode === 1 ? 32 : 1); }, { passive: false });
   addEventListener('scroll', () => { if (scrollX) scrollTo(0, scrollY); }, { passive: true });
+  // D64 vertical: fit the whole text box in the viewport at page top (hero moves into the text flow; height from space below box top)
+  var hero = $('main .hero'), heroHome = hero && hero.parentNode, heroNext = hero && hero.nextSibling;
+  function fit() { if (!text) return;
+    if (vert()) { if (hero && hero.parentNode !== text) text.prepend(hero);
+      const top = text.getBoundingClientRect().top + scrollY, avail = Math.floor(innerHeight - top - 12);
+      d.style.setProperty('--vz-vh', Math.max(avail, 0) + 'px'); }
+    else { if (hero && hero.parentNode === text) heroHome.insertBefore(hero, heroNext); d.style.removeProperty('--vz-vh'); } }
+  fit(); addEventListener('resize', () => fit()); addEventListener('load', () => fit()); if (window.ResizeObserver) { const ro = new ResizeObserver(() => fit()); $$('.head,.resume').forEach(e => ro.observe(e)); }
+  const _apply = apply; apply = function () { _apply(); fit(); };
   const bar = $('.progress i');
   if (ep && text) {
     const saved = st.pos[ep];
