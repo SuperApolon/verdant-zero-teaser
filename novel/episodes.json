@@ -47,5 +47,12 @@
     "label": "第6話",
     "subtitle": "灯喰い",
     "act": "act1"
+  },
+  {
+    "ep": 7,
+    "id": "ep07",
+    "label": "第7話",
+    "subtitle": "破泡",
+    "act": "act1"
   }
 ]
