@@ -84,7 +84,7 @@
   const outro = $('.outro'), nx = $('.outro .next[data-next]');
   if (ep && outro && nx && !nx.querySelector('a') && !$('a[rel=next]') && !$('.outro .soon')) {
     const box = document.createElement('div'); box.className = 'soon'; box.setAttribute('role', 'note');
-    const p = document.createElement('p'); p.textContent = '続きは準備中です'; const acts = document.createElement('div'); acts.className = 'acts';
+    const p = document.createElement('p'); p.textContent = 'つづく'; const acts = document.createElement('div'); acts.className = 'acts';
     const lk = (href, t, ext) => { const a = document.createElement('a'); a.href = href; a.textContent = t; if (ext) { a.rel = 'noopener'; a.target = '_blank'; } acts.append(a); };
     lk('./', '目次へ'); if (/^https:\/\/(x|twitter)\.com\//.test(xUrl) && !outro.querySelector(`a[href="${CSS.escape(xUrl)}"]`)) lk(xUrl, 'X で最新情報を見る', true);
     box.append(p, acts); nx.replaceWith(box); }
