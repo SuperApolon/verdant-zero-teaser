@@ -229,5 +229,12 @@
     "label": "第32話",
     "subtitle": "本物の海で",
     "act": "act3"
+  },
+  {
+    "ep": 33,
+    "id": "ep33",
+    "label": "第33話",
+    "subtitle": "虚ろな海",
+    "act": "act3"
   }
 ]
