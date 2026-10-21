@@ -250,5 +250,12 @@
     "label": "第35話",
     "subtitle": "零溝",
     "act": "act3"
+  },
+  {
+    "ep": 36,
+    "id": "ep36",
+    "label": "第36話",
+    "subtitle": "終わらせ方",
+    "act": "finale"
   }
 ]
