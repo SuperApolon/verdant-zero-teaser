@@ -215,5 +215,12 @@
     "label": "第30話",
     "subtitle": "名前の行方",
     "act": "act3"
+  },
+  {
+    "ep": 31,
+    "id": "ep31",
+    "label": "第31話",
+    "subtitle": "灯会の夜",
+    "act": "act3"
   }
 ]
