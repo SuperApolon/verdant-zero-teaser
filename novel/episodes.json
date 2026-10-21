@@ -110,5 +110,12 @@
     "label": "第15話",
     "subtitle": "窓の数を数える",
     "act": "act2"
+  },
+  {
+    "ep": 16,
+    "id": "ep16",
+    "label": "第16話",
+    "subtitle": "灯守の青年",
+    "act": "act2"
   }
 ]
