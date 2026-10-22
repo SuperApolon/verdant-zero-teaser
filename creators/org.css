@@ -14,5 +14,5 @@
 .card.assist{background:#10163a;border-style:dashed}
 .card.assist h2,.card.member h2{font-size:1.15rem}
 @media (min-width:600px){.top-grid .card{width:calc((100% - 1.25rem)/2)}.card.lead-card{width:min(100%,26rem)}}
-@media (min-width:1000px){.top-grid .card{width:calc((100% - 2.5rem)/3)}}
+@media (min-width:1000px){.top-grid .card{width:calc((100% - 3.75rem)/4)}}
 .ref a{display:inline-block;min-height:44px;line-height:44px;padding:0 .4em}
